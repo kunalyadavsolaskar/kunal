@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Registration form</title>
+        <script type = "text/javascript">
+           function validate()
+            {
+                if( document.myForm.fname.value == "" ) {
+                alert( "enter first name" );
+                document.myForm.fname.focus() ;
+                return false;}
+                if( document.myForm.EMail.value == "" ) {
+            alert( "Please enter your Email!" );
+            document.myForm.EMail.focus() ;
+            return false;
+         }
+         if( document.myForm.no.value == "" || isNaN( document.myForm.no.value ) ||
+            document.myForm.no.value.length != 5 ) {
+            
+            alert( "mobile no." );
+            document.myForm.no.focus() ;
+            return false;
+         }
+             }
+        
+        </script>
+
+
+    </head>   
+        <body >
+            <center>
+            <div >
+            <form  name="myForm" onsubmit="return(validate())">
+                <h3>REGISTRATION FORM</h3>
+                <hr size="5" color="brown">
+                <table cellspacing="20">
+                    
+                <tr>
+                    <td>
+
+                     Name:
+                    </td>
+                    <td>
+                        <input type="text" id="fname" >
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        Email Id:
+                    </td>
+                    <td>
+                        <input type="text" id="Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mobile No.:
+                    </td>
+                    <td>
+                        <input type="number" id="no">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender:
+                    </td>
+                    <td>
+                        <input type="radio" name="Gender" value="Male">Male
+                        <input type="radio" name="Gender" value="Female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Birthdate:
+                    </td>
+                    <td>
+                        <input type="date" Birthdate="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address:
+                    </td>
+                    <td>
+                        <input type="text" adress="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Zip Code:
+                    </td>
+                    <td>
+                        <input type="number" zip="">
+                    </td>
+                </tr>
+            </div>
+                </table>
+                 <center>
+        <input type="submit" value="submit" onclick="#blank">
+        <input type="reset">
+    </center>
+            </form>
+        </body>
+    </center>
+   
+    
+</html>
