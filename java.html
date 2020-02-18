@@ -1,31 +1,49 @@
-<html>
+   <html>
     <head>
         <title>Registration form</title>
         <script type = "text/javascript">
            function validate()
-            {
-                if( document.myForm.fname.value == "" ) {
-                alert( "enter first name" );
-                document.myForm.fname.focus() ;
-                return false;}
-                if( document.myForm.EMail.value == "" ) {
-            alert( "Please enter your Email!" );
-            document.myForm.EMail.focus() ;
-            return false;
-         }
-         if( document.myForm.no.value == "" || isNaN( document.myForm.no.value ) ||
-            document.myForm.no.value.length != 5 ) {
-            
-            alert( "mobile no." );
-            document.myForm.no.focus() ;
-            return false;
-         }
-             }
-        
-        </script>
-
-
-    </head>   
+            {var regex = /^[a-zA-Z][a-zA-Z\\s]+$/;
+                if( document.myForm.fname.value == ""||regex.test(myForm.fname.value)==false ) {
+                  alert( "enter first name" );
+                   document.myForm.fname.focus() ;
+                   return false;}
+                   var regex3=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+                if( document.myForm.Email.value == ""||regex3.test(myForm.Email.value)==false  ) {
+                  alert( "Please enter your Email!" );
+                  document.myForm.Email.focus() ;
+                   return false;
+                     }
+                var regex1 = /^\d{10}$/;
+                if( document.myForm.no.value == ""||regex1.test(myForm.no.value) == false ) 
+                {
+                  alert( "enter valid mobile no." );
+                 document.myForm.no.focus() ;
+                 return false;
+                }
+                if ( ( document.myForm.gender[0].checked == false ) && ( document.myForm.gender[1].checked == false ) )
+               {
+                   alert ( "Please choose your Gender: Male or Female" );
+                   document.myForm.gender[0].focus();
+                   return false;
+                } 
+               var regex4=/^\d+\s[A-z]+\s[A-z]+/g
+                if( document.myForm.addr.value == ""||regex4.test(myForm.addr.value)==false  ) 
+                {
+                  alert( "enter valid address." );
+                 document.myForm.addr.focus() ;
+                 return false;
+                }  
+               var regex2 = /^\d{5}$/;
+                if( document.myForm.zip.value == ""||regex2.test(zip.value) == false ) 
+                {
+                  alert( "enter valid zip and it should be 5 digit" );
+                 document.myForm.zip.focus() ;
+                 return false;
+                } 
+            }
+      </script>
+   </head>   
         <body >
             <center>
             <div >
@@ -40,7 +58,7 @@
                      Name:
                     </td>
                     <td>
-                        <input type="text" id="fname" >
+                        <input type="text" id="fname" name="fname">
                     </td>
                 </tr>
                 
@@ -49,7 +67,7 @@
                         Email Id:
                     </td>
                     <td>
-                        <input type="text" id="Email">
+                        <input type="text" id="Email" name="Email">
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +75,7 @@
                         Mobile No.:
                     </td>
                     <td>
-                        <input type="number" id="no">
+                        <input type="text" id="no" name="mobno">
                     </td>
                 </tr>
                 <tr>
@@ -65,8 +83,8 @@
                         Gender:
                     </td>
                     <td>
-                        <input type="radio" name="Gender" value="Male">Male
-                        <input type="radio" name="Gender" value="Female">Female
+                        <input type="radio" name="gender" value="Male">Male
+                        <input type="radio" name="gender" value="Female">Female
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +92,7 @@
                         Birthdate:
                     </td>
                     <td>
-                        <input type="date" Birthdate="">
+                        <input type="date" id="date" name="dob">
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +100,7 @@
                         Address:
                     </td>
                     <td>
-                        <input type="text" adress="">
+                        <input type="text" id="addr" name="address">
                     </td>
                 </tr>
                 <tr>
@@ -90,7 +108,7 @@
                         Zip Code:
                     </td>
                     <td>
-                        <input type="number" zip="">
+                        <input type="text" id="zip" name="zip">
                     </td>
                 </tr>
             </div>
